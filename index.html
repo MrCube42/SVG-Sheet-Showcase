@@ -8,39 +8,76 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Hello SVG Sheet</h1>
-        <p class="subtitle">
-          Example personal music library application showcasing the usage of SVG
-          icons and the automatic integration of SVG sheets into web
-          applications.
-        </p>
+    <section class="hero is-primary is-bold">
+      <div class="hero-body">
         <div
-          class="box"
-          style="display: flex; flex-direction: column; width: 420px"
+          class="container"
+          style="display: flex; flex-direction: row; align-items: center"
         >
-          <div class="field">
-            <label class="label">Username</label>
-            <input
-              class="input"
-              type="text"
-              placeholder="Enter username"
-              value=""
+          <div class="brand-container">
+            <img
+              width="128"
+              height="128"
+              src="assets/logos/003-romantische-musik.svg"
             />
           </div>
-          <div class="field">
-            <label class="label">Password</label>
-            <input
-              class="input"
-              type="password"
-              placeholder="Enter password"
-              value=""
-            />
+          <div class="ml-6">
+            <h1 class="title">My Music</h1>
+            <h2 class="subtitle">The best music library I ever had.</h2>
           </div>
-          <button class="button is-primary mt-3">Login</button>
         </div>
       </div>
     </section>
+    <section class="section" style="display: flex; justify-content: center">
+      <div
+        class="box"
+        style="display: flex; flex-direction: column; width: 420px"
+      >
+        <div class="field">
+          <label class="label">Username</label>
+          <input
+            class="input"
+            type="text"
+            placeholder="Enter username"
+            value=""
+          />
+        </div>
+        <div class="field">
+          <label class="label" style="display: flex"> Password </label>
+          <div class="control has-icons-right password">
+            <input
+              id="password"
+              class="input"
+              type="password"
+              placeholder="Enter password"
+              oninput="resetValidation()"
+            />
+            <span id="validator" class="icon is-right">
+              <img width="16" height="16" src="assets/icons/001-warnung.svg" />
+            </span>
+          </div>
+        </div>
+        <button onclick="tryLogin()" class="button is-primary mt-3">
+          <img width="24" height="24" src="assets/icons/002-einloggen.svg" />
+          <span class="ml-2">Login</span>
+        </button>
+      </div>
+    </section>
+    <script>
+      function tryLogin() {
+        // Simulation: Everything is invalid.
+        const invalid = true;
+
+        if (invalid) {
+          document.getElementById("password").classList.add("is-danger");
+          document.getElementById("validator").classList.add("invalid");
+        }
+      }
+
+      function resetValidation() {
+        document.getElementById("password").classList.remove("is-danger");
+        document.getElementById("validator").classList.remove("invalid");
+      }
+    </script>
   </body>
 </html>
