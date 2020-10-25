@@ -1,0 +1,19 @@
+{
+  "name": "svg-sheet-showcase",
+  "version": "1.0.0",
+  "description": "Example personal music library application showcasing the usage of SVG icons and the automatic integration of SVG sheets into web applications.",
+  "scripts": {
+    "start": "browser-sync start --server --files '*.css,*html'"
+  },
+  "keywords": [
+    "SVG"
+  ],
+  "author": "David Würfel",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.13"
+  },
+  "dependencies": {
+    "bulma": "^0.9.1"
+  }
+}
