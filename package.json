@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Example personal music library application showcasing the usage of SVG icons and the automatic integration of SVG sheets into web applications.",
   "scripts": {
-    "start": "browser-sync start --server --files '*.css,*html'"
+    "start": "browser-sync start --server --files '*.css,*html'",
+    "preicons:bundle": "shx mkdir -p dist/assets/",
+    "icons:bundle": "svgstore ./assets/icons/*.svg -o dist/assets/icons.svg -p Icon.",
+    "posticons:bundle": "svgo -i dist/assets/icons.svg -o dist/assets/icons.svg --config=svgo.yml"
   },
   "keywords": [
     "SVG"
@@ -11,7 +14,10 @@
   "author": "David Würfel",
   "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^2.26.13"
+    "browser-sync": "^2.26.13",
+    "shx": "^0.3.3",
+    "svgo": "^1.3.2",
+    "svgstore-cli": "^2.0.0"
   },
   "dependencies": {
     "bulma": "^0.9.1"

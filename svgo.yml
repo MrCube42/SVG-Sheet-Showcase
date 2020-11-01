@@ -1,0 +1,11 @@
+# Disable all SVGO plugins by default
+full: true
+
+plugins:
+  - collapseGroups: true
+  - removeEmptyContainers: true
+  - removeDoctype: true
+
+js2svg:
+  pretty: true
+  indent: "  "
