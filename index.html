@@ -53,12 +53,16 @@
               oninput="resetValidation()"
             />
             <span id="validator" class="icon is-right">
-              <img width="16" height="16" src="assets/icons/001-warnung.svg" />
+              <svg class="svg-icon warning">
+                <use xlink:href="dist/assets/icons.svg#Icon.001-warnung" />
+              </svg>
             </span>
           </div>
         </div>
         <button onclick="tryLogin()" class="button is-primary mt-3">
-          <img width="24" height="24" src="assets/icons/002-einloggen.svg" />
+          <svg class="svg-icon login">
+            <use xlink:href="dist/assets/icons.svg#Icon.002-einloggen" />
+          </svg>
           <span class="ml-2">Login</span>
         </button>
       </div>
