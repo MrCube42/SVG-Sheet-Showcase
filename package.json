@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Example personal music library application showcasing the usage of SVG icons and the automatic integration of SVG sheets into web applications.",
   "scripts": {
-    "preicons:bundle": "shx mkdir -p dist/assets/",
-    "icons:bundle": "svgstore ./assets/icons/*.svg -o dist/assets/icons.svg -p Icon.",
-    "posticons:bundle": "svgo -i dist/assets/icons.svg -o dist/assets/icons.svg --config=svgo.yml",
-    "prestart": "npm run icons:bundle",
+    "preicons": "shx mkdir -p dist/assets/",
+    "icons": "svgstore assets/icons/*.svg -o dist/assets/icons.svg -p Icon.",
+    "posticons": "svgo -i dist/assets/icons.svg -o dist/assets/icons.svg --config=svgo.yml",
+    "prestart": "npm run icons",
     "start": "browser-sync start --server --files '*.css,*html'"
   },
   "keywords": [
